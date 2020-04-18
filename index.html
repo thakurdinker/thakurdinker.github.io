@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid-19 Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+</head>
+<body onload="getTotals()">
+    
+    <nav>
+        <div>
+            <button onclick="getData()">View By Country</button>
+            <button><a href="data/coronvavirushelplinenumber.pdf" download="">Helpline No.</a></button>
+        </div>
+
+        <!-- <li><a href="index.html">Helpline Numbers</a></li> -->
+
+        <h1>COVID-19 Dashboard</h1>
+        <span id="date">Date:</span>
+    </nav>
+    
+    <div class="heading">
+        <h1>COVID-19 Dashboard</h1>
+    </div>
+    
+    <div class="dashboard" id="dash">
+        <div class="box1">
+            <div class="content">
+                <h3 class="dashboard_text">Confirmed Cases</h3>
+                <span class="display_toggle" id="Confirmed"></span>
+                <img class="display_toggle image" src="images/refresh.svg" alt="">
+            </div>
+        </div>
+        <div class="box2">
+            <div class="content">
+                <h3 class="dashboard_text">Deaths</h3>
+                <span class="display_toggle" id="deaths"></span>
+                <img class="display_toggle image" src="images/refresh.svg" alt="">
+            </div>
+        </div>
+        <div class="box3">
+            <div class="content">
+                <h3 class="dashboard_text">Recovered</h3>
+                <span class="display_toggle" id="Recovered"></span>
+                <img class="display_toggle image" src="images/refresh.svg" alt="">
+            </div>
+        </div>
+        <div class="box4">
+            <div class="content">
+                <h3 class="dashboard_text">Active Cases</h3>
+                <span class="display_toggle" id="active"></span>
+                <img class="display_toggle image" src="images/refresh.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Field -->
+    <div class="input display_toggle" id="input">
+        <input type="text" id="countryname" placeholder="Enter Country Name" required>
+        <button onclick="getData()">Submit</button>
+        <button onclick="location.reload(true)">Go Back</button>
+    </div>
+
+
+    
+    <div class="container">
+            <h1>Social Media Hub</h1>
+        <div class="circle_top">
+            <div class="circle" id="facebook">
+                <a href="https://www.facebook.com/MyGovIndia/" target="_blank"><img src="images/facebook.svg" alt=""></a>
+            </div>
+            <div class="circle" id="telegram">
+                    <a href="https://t.me/MyGovCoronaNewsdesk" target="_blank"><img src="images/telegram.svg" alt=""></a>
+            </div>
+            <div class="circle" id="instagram">
+                    <a href="https://www.instagram.com/mygovindia/" target="_blank"><img src="images/instagram.svg" alt=""></a>
+            </div>
+            <div class="circle" id="whatsapp">
+                    <a href="https://wa.me/919013353535?text=Hi" target="_blank"><img src="images/whatsapp.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="circle_bottom">
+            <div class="circle" id="twitter">
+                    <a href="https://twitter.com/mygovindia" target="_blank"><img src="images/twitter.svg" alt=""></a>
+            </div>
+            <div class="circle" id="youtube">
+                    <a href="https://www.youtube.com/mygovindia" target="_blank"><img src="images/youtube.svg" alt=""></a>
+            </div>
+            <div class="circle" id="messenger">
+                    <a href="https://www.messenger.com/t/MyGovIndia" target="_blank"><img src="images/messenger.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <script src="js/corona_data.js"></script>
+</body>
+</html>
