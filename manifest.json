@@ -1,0 +1,40 @@
+{
+    "short_name": "Covid-19",
+    "name": "Covid-19 Dashboard",
+    "theme_color": "#1e90ff",
+    "background_color": "#F7F8F9",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "icons/virus(5)",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "icons/virus(4)",
+        "type": "image/png",
+        "sizes": "128x128"
+      },
+      {
+        "src": "icons/virus(3)",
+        "type": "image/png",
+        "sizes": "64x64"
+      },
+      {
+        "src": "icons/virus(2)",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "src": "icons/virus(1)",
+        "type": "image/png",
+        "sizes": "24x24"
+      },
+      {
+        "src": "icons/virus",
+        "type": "image/png",
+        "sizes": "16x16"
+      }
+    ],
+    "start_url": "/?utm_source=launcher"
+  }
