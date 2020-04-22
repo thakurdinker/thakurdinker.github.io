@@ -29,6 +29,7 @@ nav {
 nav div {
     border-bottom: 3px solid #1e90ff;
 }
+
 nav div button {
     display: inline-block;
     box-sizing: content-box;

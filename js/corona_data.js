@@ -121,16 +121,26 @@ function recieve_input() {
 }
 // Get Country Data
 function getData(){
-	// If dashboard is enabled then disable it
-	if(!dashboard.classList.toggle('display_toggle')){
+	// Disable Dashboard
+	if(!dashboard.classList.contains('display_toggle')){
 		dashboard.classList.toggle('display_toggle');
 	}
+       
+
+	// If charts are enabled then disable it 
+	if(!chart1.classList.contains('display_toggle')){
+		chart1.classList.toggle('display_toggle');
+		chart2.classList.toggle('display_toggle');
+		chart3.classList.toggle('display_toggle');
+		chart_exit.classList.toggle('display_toggle');
+	}
+
 	
 	//If input field is disabled then enable it
-	if(input.classList.toggle('display_toggle')){
-		// console.log(input.classList.toggle('display_toogle'));
+	if(input.classList.contains('display_toggle')){
 		input.classList.toggle('display_toggle');	
 	}
+
 
 	// recieve input
 	input1 = recieve_input();
@@ -163,10 +173,16 @@ function getData(){
 				getweekly(input1);
 				input_name.value = "";
 				// disable input field
-				input.classList.toggle('display_toggle');
+				if(!input.classList.contains('display_toggle')){
+					input.classList.toggle('display_toggle');
+				}
+
 
 				// enable dashboard
-                dashboard.classList.toggle('display_toggle');
+				if(dashboard.classList.contains('display_toggle')){
+					dashboard.classList.toggle('display_toggle');
+				}
+
 
 				
 				confirmed.innerHTML = response.data.summary['total_cases'];
@@ -402,19 +418,26 @@ function updateLineChart(data1){
 }
 
 function chart_enable_disable(){
-	if(!input_name.classList.toggle('display_toggle')){
-		console.log("Disabling");
-		input_name.classList.toggle('display_toggle');
+	// Disable input field
+	if(!input.classList.contains('display_toggle')){
+		input.classList.toggle('display_toggle');
 	}
-	if(!dashboard.classList.toggle('display_toggle')){
-		console.log("Disabling");
+
+	
+	// Disable Dashboard
+	if(!dashboard.classList.contains('display_toggle')){
 		dashboard.classList.toggle('display_toggle');
 	}
 
-	chart1.classList.toggle('display_toggle');
-	chart2.classList.toggle('display_toggle');
-	chart3.classList.toggle('display_toggle');
-	chart_exit.classList.toggle('display_toggle');
+	 
+	// Enable Chart
+	if(chart1.classList.contains('display_toggle')){
+		chart1.classList.toggle('display_toggle');
+		chart2.classList.toggle('display_toggle');
+		chart3.classList.toggle('display_toggle');
+		chart_exit.classList.toggle('display_toggle');
+	}
+
 
 	// getweekly();
 }
