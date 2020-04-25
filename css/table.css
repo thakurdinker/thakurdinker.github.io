@@ -29,9 +29,11 @@ a {
 #data {
     text-align: center;
 }
+
 #back {
     text-align: center;
 }
+
 #back button {
     display: inline-block;
     box-sizing: content-box;
@@ -45,28 +47,51 @@ a {
     cursor: pointer;
 }
 
-#back button:hover{
+#back button:hover {
     color: white;
     background: dodgerblue;
 }
 
-#back button:active{
+#back button:active {
     background-color: dodgerblue;
     transform: translateY(4px);
 }
 
 th {
-   box-sizing: border-box;
-   width: 100px;
-   background-color: dodgerblue;
-   color: white;
-   padding: 1%;
-   font-size: 0.8em;
+    box-sizing: border-box;
+    width: 100px;
+    background-color: dodgerblue;
+    color: white;
+    padding: 1%;
+    font-size: 0.8em;
 }
 
 
 td {
-    border: 1px  solid grey;
+    border: 1px solid grey;
     padding: 2%;
     font-size: 0.8em;
+}
+
+
+/* Back Button */
+.btn_container {
+    margin: 5em 0;
+    text-align: center;
+}
+
+.back_btn {
+    font-family: inherit;
+    font-size: inherit;
+    text-align: center;
+    padding: 1em 2em;
+    border: 1px solid dodgerblue;
+    color: #000000;
+    transition: all .3s;
+    border-radius: .3em;
+}
+
+.back_btn:hover {
+    background-color: dodgerblue;
+    color: #ffffff;
 }
