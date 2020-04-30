@@ -73,25 +73,29 @@ td {
     font-size: 0.8em;
 }
 
-
-/* Back Button */
-.btn_container {
-    margin: 5em 0;
+#back1 {
     text-align: center;
 }
 
-.back_btn {
-    font-family: inherit;
-    font-size: inherit;
-    text-align: center;
-    padding: 1em 2em;
+#back1 button {
+    display: inline-block;
+    box-sizing: content-box;
+    margin: 3% auto;
+    width: 110px;
+    height: 40px;
+    background: transparent;
     border: 1px solid dodgerblue;
-    color: #000000;
-    transition: all .3s;
-    border-radius: .3em;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.back_btn:hover {
+#back1 button:hover {
+    color: white;
+    background: dodgerblue;
+}
+
+#back1 button:active {
     background-color: dodgerblue;
-    color: #ffffff;
+    transform: translateY(4px);
 }

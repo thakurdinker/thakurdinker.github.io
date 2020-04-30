@@ -2,7 +2,7 @@ var table = document.getElementById("data");
 var district_table = document.getElementById("district_data");
 var district_name = document.getElementById("district");
 var goback = document.getElementById("back");
-let btn_container = document.querySelector(".btn_container");
+var goback1 = document.getElementById("back1");
 var district_header = document.getElementById("district");
 var row, state_name, Confirmed, Deaths, recovered, anchor;
 var json_data;
@@ -51,6 +51,14 @@ function updateTable(data) {
     row.appendChild(recovered);
     table.appendChild(row);
   }
+    // Disable district table Button
+    if (!goback.classList.contains("display_toggle")) {
+      goback.classList.toggle("display_toggle");
+    }
+  // Enable Homepage Button
+  if (goback1.classList.contains("display_toggle")) {
+    goback1.classList.toggle("display_toggle");
+  }
 }
 
 function show_district() {
@@ -61,9 +69,9 @@ function show_district() {
     table.classList.toggle("display_toggle");
   }
 
-  // Disable Button Container
-  if (!btn_container.classList.contains("display_toggle")) {
-    btn_container.classList.toggle("display_toggle");
+  // Disable Homepage Button
+  if (!goback1.classList.contains("display_toggle")) {
+    goback1.classList.toggle("display_toggle");
   }
 
   // Enable District Name Header
