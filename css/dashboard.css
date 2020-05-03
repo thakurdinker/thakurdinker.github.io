@@ -43,14 +43,6 @@ nav div button {
     cursor: pointer;
 }
 
-nav div button a {
-    text-decoration: none;
-    color: black;
-}
-
-nav div button a:hover{
-    color: white;
-}
 nav div button:hover{
     color: white;
     background: dodgerblue;
@@ -66,10 +58,6 @@ nav h1 {
     font-weight: 500; 
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: black;
-}
 
 .heading {
     display: none;
