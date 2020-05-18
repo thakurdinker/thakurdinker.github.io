@@ -4,8 +4,9 @@ var district_name = document.getElementById("district");
 var goback = document.getElementById("back");
 var goback1 = document.getElementById("back1");
 var district_header = document.getElementById("district");
-var row, state_name, Confirmed, Deaths, recovered, anchor;
+var row, state_name, Confirmed, Deaths, recovered, anchor,delta_confirmed, delta_recovered, delta_deaths;
 var json_data;
+var district_delta_confirmed, district_delta_recovered, district_delta_deaths;
 
 function getStatesData() {
   fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
@@ -27,6 +28,7 @@ function getStatesData() {
     .catch((err) => {
       console.log(err);
     });
+
 }
 
 function updateTable(data) {
@@ -35,6 +37,12 @@ function updateTable(data) {
     row = document.createElement("tr");
     state_name = document.createElement("td");
     Confirmed = document.createElement("td");
+    delta_confirmed = document.createElement('span');
+    delta_confirmed.setAttribute('style','color: red;');
+    delta_deaths = document.createElement('span');
+    delta_deaths.setAttribute('style','color: #7f53ac;');
+    delta_recovered = document.createElement('span');
+    delta_recovered.setAttribute('style','color: green;');
     Deaths = document.createElement("td");
     recovered = document.createElement("td");
     anchor = document.createElement("a");
@@ -42,13 +50,19 @@ function updateTable(data) {
     anchor.setAttribute("onclick", "show_district()");
     anchor.innerText = key;
     Confirmed.innerText = data.state_wise[key].confirmed;
+    delta_confirmed.innerText = " "+"[ "+data.state_wise[key].deltaconfirmed+" ]";
     Deaths.innerText = data.state_wise[key].deaths;
+    delta_deaths.innerText = " "+"[ "+data.state_wise[key].deltadeaths+" ]";
     recovered.innerText = data.state_wise[key].recovered;
+    delta_recovered.innerText = " "+"[ "+data.state_wise[key].deltarecovered+" ]";
     state_name.appendChild(anchor);
     row.appendChild(state_name);
     row.appendChild(Confirmed);
+    Confirmed.appendChild(delta_confirmed);
     row.appendChild(Deaths);
+    Deaths.appendChild(delta_deaths);
     row.appendChild(recovered);
+    recovered.appendChild(delta_recovered);
     table.appendChild(row);
   }
     // Disable district table Button
@@ -95,16 +109,28 @@ function show_district() {
     row = document.createElement("tr");
     dis_name = document.createElement("td");
     Confirmed = document.createElement("td");
+    district_delta_confirmed = document.createElement('span');
+    district_delta_confirmed.setAttribute('style','color: red');
     Deaths = document.createElement("td");
+    district_delta_deaths = document.createElement('span');
+    district_delta_deaths.setAttribute('style','color: #7f53ac');
     recovered = document.createElement("td");
+    district_delta_recovered = document.createElement('span');
+    district_delta_recovered.setAttribute('style','color: green');
     dis_name.innerText = key;
     Confirmed.innerText = json_data.state_wise[name].district[key].confirmed;
+    district_delta_confirmed.innerText = " " + "[ " + json_data.state_wise[name].district[key].delta.confirmed + " ]";
     Deaths.innerText = json_data.state_wise[name].district[key].deceased;
+    district_delta_deaths.innerText = " " + "[ " + json_data.state_wise[name].district[key].delta.deceased + " ]";
     recovered.innerText = json_data.state_wise[name].district[key].recovered;
+    district_delta_recovered.innerText =  " " + "[ "+ json_data.state_wise[name].district[key].delta.recovered + " ]";
     row.appendChild(dis_name);
     row.appendChild(Confirmed);
+    Confirmed.appendChild(district_delta_confirmed);
     row.appendChild(Deaths);
+    Deaths.appendChild(district_delta_deaths);
     row.appendChild(recovered);
+    recovered.appendChild(district_delta_recovered);
     district_table.appendChild(row);
   }
 }
